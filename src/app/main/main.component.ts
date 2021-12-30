@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-input-budget',
-  templateUrl: './input-budget.component.html',
-  styleUrls: ['./input-budget.component.css']
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css']
 })
-export class InputBudgetComponent {
+export class MainComponent {
 }
