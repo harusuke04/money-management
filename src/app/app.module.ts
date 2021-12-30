@@ -7,6 +7,7 @@ import { InputBudgetComponent } from './input-budget/input-budget.component';
 import { HeaderComponent } from './common/header/header.component';
 import { InputIncomeComponent } from './input-income/input-income.component';
 import { InputSpendingComponent } from './input-spending/input-spending.component';
+import { InputSavingComponent } from './input-saving/input-saving.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InputSpendingComponent } from './input-spending/input-spending.componen
     HeaderComponent,
     InputBudgetComponent,
     InputIncomeComponent,
-    InputSpendingComponent
+    InputSpendingComponent,
+    InputSavingComponent
   ],
   imports: [
     BrowserModule,
