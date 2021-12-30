@@ -1,0 +1,13 @@
+table{
+  width: 300px;
+  border:1px black solid;
+  border-collapse: collapse;
+}
+th,td{
+  border:1px black solid;
+}
+input[type="text"]{
+  width: 207px;
+  padding: 0;
+  line-height: 28px;
+}
