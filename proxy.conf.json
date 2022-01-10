@@ -1,0 +1,6 @@
+{
+    "/main":{
+        "target": "http://localhost:3001",
+        "security":false
+    }
+}

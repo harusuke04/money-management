@@ -9,6 +9,9 @@ import { InputIncomeComponent } from './input-income/input-income.component';
 import { InputSpendingComponent } from './input-spending/input-spending.component';
 import { InputSavingComponent } from './input-saving/input-saving.component';
 import { MainComponent } from './main/main.component';
+import { moneyManagementService } from './shared/money-management-service';
+
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [moneyManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

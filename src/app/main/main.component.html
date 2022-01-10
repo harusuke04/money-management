@@ -1,4 +1,67 @@
-<button routerLink="input-budget" routerLinkActive="myactive">予算追加</button>
-<button routerLink="input-income" routerLinkActive="myactive">収入追加</button>
-<button routerLink="input-spending" routerLinkActive="myactive">支出追加</button>
-<button routerLink="input-saving" routerLinkActive="myactive">貯金追加</button>
+<div class="container">
+    <div class="row">
+        <div class="col">            
+            <table>
+                <tr><h6>今後の予算</h6></tr>
+                <tr>
+                    <th>日付</th>
+                    <th>予算項目</th>
+                    <th>予算</th>
+                </tr>
+                <tr *ngFor="let budget of budgets">
+                    <td>{{ budget.date }}</td>
+                    <td>{{ budget.budgetName }}</td>
+                    <td>{{ budget.price }}</td>
+                </tr>
+                <tr><button routerLink="input-budget" routerLinkActive="myactive">予算追加</button></tr>
+            </table>
+        </div>
+        <div class="col">
+            <table>
+                <tr><h6>収入</h6></tr>
+                <tr>
+                    <th>氏名</th>
+                    <th>収入金額</th>
+                </tr>
+                <tr *ngFor="let budget of budgets">
+                    <td>{{ budget.date }}</td>
+                    <td>{{ budget.price }}</td>
+                </tr>
+                <tr><button routerLink="input-income" routerLinkActive="myactive">収入追加</button></tr>                
+            </table>
+            <br>
+            <table>
+                <tr><h6>支出</h6></tr>
+                <tr>
+                    <th>日付</th>
+                    <th>支出項目</th>
+                    <th>支出金額</th>
+                </tr>
+                <tr *ngFor="let budget of budgets">
+                    <td>{{ budget.date }}</td>
+                    <td>{{ budget.budgetName }}</td>
+                    <td>{{ budget.price }}</td>
+                </tr>
+                <tr><button routerLink="input-spending" routerLinkActive="myactive">支出追加</button></tr>
+            </table>
+            <br>
+            <table>
+                <tr><h6>貯金</h6></tr>
+                <tr>
+                    <th>日付</th>
+                    <th>貯金項目</th>
+                    <th>貯金額</th>
+                </tr>
+                <tr *ngFor="let budget of budgets">
+                    <td>{{ budget.date }}</td>
+                    <td>{{ budget.budgetName }}</td>
+                    <td>{{ budget.price }}</td>
+                </tr>
+                <tr><button routerLink="input-saving" routerLinkActive="myactive">貯金追加</button></tr>
+            </table>
+        </div>
+        <div class="col">
+            Column
+        </div>
+    </div>
+  </div>
