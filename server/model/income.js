@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 const IncomeSchema = new Schema({
 //    author: ObjectId,
-    date : String,
-    income : String,
-    flg : Number
+    incomeRegistDate : String,
+    incomePrice : String,
+    incomeRegistFlg : Number
 });
 
 module.exports = mongoose.model('income', IncomeSchema);

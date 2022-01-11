@@ -8,18 +8,17 @@ import { moneyManagementService } from '../shared/money-management-service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit{
-  budgets : any 
+  mainInf : any
 
   constructor(private moneyManagementService: moneyManagementService){}
 
   ngOnInit(): void {
-    // 予算取得
-    const budgetObservable = this.moneyManagementService.getbudget();
-    budgetObservable.subscribe(
+    // 必要情報取得
+    const mainInfObservable = this.moneyManagementService.getMainInfo();
+    mainInfObservable.subscribe(
       (data) => {
-        this.budgets = data;
-        console.log(this.budgets[0].price);
-      }      
+        this.mainInf = data;
+      }
     )
   }
 }

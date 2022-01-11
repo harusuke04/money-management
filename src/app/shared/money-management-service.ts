@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class moneyManagementService{
     constructor(private http : HttpClient){}
 
-    getbudget(): Observable<any>{
+    getMainInfo(): Observable<any>{
         return this.http.get('/main');
     }
 }

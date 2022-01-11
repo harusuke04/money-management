@@ -5,42 +5,44 @@ class FakeDB{
     constructor() {
         this.budgets = [
             {
-                date : 20221225,
+                budgetRegistDate : 20221225,
                 budgetName : '結婚式',
-                price : 3000000
+                budgetPrice : 3000000
             },
             {
-                date : 20220401,
+                budgetRegistDate : 20220401,
                 budgetName : '前撮り',
-                price : 100000
+                budgetPrice : 100000
             },
             {
-                date : 20220801,
+                budgetRegistDate : 20220801,
                 budgetName : '新婚旅行',
-                price : 600000
+                budgetPrice : 600000
             }
         ]
         this.incomes = [
             {
-                date : 20220125,
-                income : 300000,
-                flg : 1
+                incomeRegistDate : 20220125,
+                incomePrice : 300000,
+                incomeRegistFlg : 1
             },
             {
-                date : 20220120,
-                income : 300000,
-                flg : 2
+                incomeRegistDate : 20220120,
+                incomePrice : 300000,
+                incomeRegistFlg : 2
             }
         ]
     }
     
     async initDb(){
         await this.cleanDb();
+        // this.pushMainToDb();
         this.pushBudgetToDb();
         this.pushIncomeToDb();
     }
 
     async cleanDb(){
+        // await moneyManagement.deleteMany({});
         await budget.deleteMany({});
         await income.deleteMany({});
     }

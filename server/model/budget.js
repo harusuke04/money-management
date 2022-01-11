@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const BudgetSchema = new Schema({
 //    author: ObjectId,
-    date : String,
+    budgetRegistDate : String,
     budgetName : String,
-    price : Number
+    budgetPrice : String
 });
 module.exports = mongoose.model('budget', BudgetSchema);

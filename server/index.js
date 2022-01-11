@@ -12,7 +12,6 @@ const { json } = require('stream/consumers');
 // mongoDBへの接続、DB初期化
 mongoose.connect(config.DB_URI).then(
     () => {
-        console.log('test');
         const fakeDB = new FakeDB();
         fakeDB.initDb();
     }
