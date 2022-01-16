@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import { moneyManagementService } from './shared/money-management-service';
 
 import { HttpClientModule } from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [moneyManagementService],
   bootstrap: [AppComponent]

@@ -16,8 +16,10 @@ router.get('',function(req,res){
             saving.find({}, function(err, savingInf){
                 // 支出取得
                 spending.find({}, function(err, spendingInf){
-                    let arr = [];
-                    res.json(arr.push(budgetInf,incomeInf,savingInf,spendingInf));
+                    let temp1 = [];
+                    temp2 = temp1.concat(budgetInf,incomeInf);
+                    mainInf = temp2.concat(savingInf,spendingInf);
+                    res.json(mainInf);
                 });
             });
         });

@@ -2,5 +2,9 @@
     "/main":{
         "target": "http://localhost:3001",
         "security":false
+    },
+    "/input-budget":{
+        "target": "http://localhost:3001",
+        "security":false
     }
 }

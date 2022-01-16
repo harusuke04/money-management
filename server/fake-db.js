@@ -1,5 +1,7 @@
 const budget = require("./model/budget");
 const income = require("./model/income");
+const saving = require('./model/saving');
+const spending = require('./model/spending');
 
 class FakeDB{
     constructor() {
@@ -32,6 +34,21 @@ class FakeDB{
                 incomeRegistFlg : 2
             }
         ]
+        this.savings = [
+            {
+                savingRegistDate : 20220101,
+                savingName : '定期貯金',
+                savingPrice : 300000
+            }
+        ]
+        this.spendings = [
+            {
+                spendingRegistDate : 20220101,
+                spendingName : 'ベビーベッド',
+                spendingPrice : 100000
+
+            }
+        ]
     }
     
     async initDb(){
@@ -39,12 +56,16 @@ class FakeDB{
         // this.pushMainToDb();
         this.pushBudgetToDb();
         this.pushIncomeToDb();
+        this.pushSavingToDb();
+        this.pushSpendingToDb();
     }
 
     async cleanDb(){
         // await moneyManagement.deleteMany({});
         await budget.deleteMany({});
         await income.deleteMany({});
+        await saving.deleteMany({});
+        await spending.deleteMany({});
     }
 
     pushBudgetToDb() {
@@ -60,6 +81,22 @@ class FakeDB{
             (incomeImport) =>{
                 const newIncome =new income(incomeImport);
                 newIncome.save();
+            }
+        )
+    }
+    pushSavingToDb(){
+        this.savings.forEach(
+            (savingImport) =>{
+                const newSaving =new saving(savingImport);
+                newSaving.save();
+            }
+        )
+    }
+    pushSpendingToDb(){
+        this.spendings.forEach(
+            (spendingImport) =>{
+                const newSpending =new spending(spendingImport);
+                newSpending.save();
             }
         )
     }

@@ -1,20 +1,22 @@
 <h5>予算追加登録</h5>
 
-<table>
-    <tr>
-        <td>予定年月：</td>
-        <td><input type="text" /></td>
-    </tr>
-    <tr>
-        <td>項目：</td>
-        <td><input type="text" /></td>
-    </tr>
-    <tr>
-        <td>金額：</td>
-        <td><input type="text" /></td>
-    </tr>
-    <tr>
-        <input type="button" value="戻る" routerLink="" routerLinkActive="myactive"/>
-        <td colspan="2"><input type="submit" /></td>
-    </tr>
-</table>
+<form [formGroup]="BudgetForm" (ngSubmit)="inputBudget()">
+    <table>
+        <tr>
+            <td>予定年月：</td>
+            <td><input type="text" id="budgetRegistDate" formControlName="budgetRegistDate" /></td>
+        </tr>
+        <tr>
+            <td>項目：</td>
+            <td><input type="text" id="budgetName" formControlName="budgetName" /></td>
+        </tr>
+        <tr>
+            <td>金額：</td>
+            <td><input type="text" id="budgetPrice" formControlName="budgetPrice" /></td>
+        </tr>
+        <tr>
+            <button routerLink="" routerLinkActive="myactive">戻る</button>
+            <td colspan="2"><input type="submit" /></td>
+        </tr>
+    </table>
+</form>

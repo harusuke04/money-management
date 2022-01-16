@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const config = require('./config/dev')
 const FakeDB = require('./fake-db')
 
-const budgetRoutes = require('./routes/budget-regist')
+const budgetRoutes = require('./routes/input-budget')
 const mainRoutes = require('./routes/main')
 
 const { find } = require('./model/budget');
@@ -24,7 +24,7 @@ const app = express()
 app.use('/main', mainRoutes);
 
 // 予算登録
-app.use('/budget/regist', budgetRoutes)
+app.use('/input-budget', budgetRoutes);
 
 // Node-Server起動
 const PORT = process.env.PORT || '3001'

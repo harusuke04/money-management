@@ -8,8 +8,8 @@
                     <th>予算項目</th>
                     <th>予算</th>
                 </tr>
-                <tr *ngFor="let budget of mainInf">
-                    <td>{{ budget[0].budgetRegistDate }}</td>
+                <tr *ngFor="let budget of budgetList">
+                    <td>{{ budget.budgetRegistDate }}</td>
                     <td>{{ budget.budgetName }}</td>
                     <td>{{ budget.budgetPrice }}</td>
                 </tr>
@@ -23,7 +23,7 @@
                     <th>氏名</th>
                     <th>収入金額</th>
                 </tr>
-                <tr *ngFor="let income of mainInf">
+                <tr *ngFor="let income of incomeList">
                     <td>{{ income.incomeRegistFlg }}</td>
                     <td>{{ income.incomePrice }}</td>
                 </tr>
@@ -37,7 +37,7 @@
                     <th>支出項目</th>
                     <th>支出金額</th>
                 </tr>
-                <tr *ngFor="let spending of mainInf">
+                <tr *ngFor="let spending of spendingList">
                     <td>{{ spending.spendingRegistDate }}</td>
                     <td>{{ spending.spendingName }}</td>
                     <td>{{ spending.spendingPrice }}</td>
@@ -52,7 +52,7 @@
                     <th>貯金項目</th>
                     <th>貯金額</th>
                 </tr>
-                <tr *ngFor="let saving of mainInf">
+                <tr *ngFor="let saving of savingList">
                     <td>{{ saving.savingRegistDate }}</td>
                     <td>{{ saving.savingName }}</td>
                     <td>{{ saving.savingPrice }}</td>
@@ -61,7 +61,7 @@
             </table>
         </div>
         <div class="col">
-            Column
+            column
         </div>
     </div>
   </div>
