@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { moneyManagementService } from '../shared/money-management-service';
 
 @Component({
   selector: 'app-input-saving',
@@ -6,4 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-saving.component.css']
 })
 export class InputSavingComponent {
+  response: any;
+
+  SavingForm = new FormGroup({
+    savingRegistDate: new FormControl(''),
+    savingName: new FormControl(''),
+    savingPrice: new FormControl('')
+  })
+
+  constructor(private moneyManagementService: moneyManagementService){}
+
+  inputSaving(){
+    // 貯金情報の登録
+    const savingObservable = this.moneyManagementService.inputSaving(this.SavingForm.value);
+    savingObservable.subscribe(
+      (data) => {
+        this.response = data;
+      }
+    )
+  }
+
 }

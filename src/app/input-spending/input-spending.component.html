@@ -1,20 +1,21 @@
 <h5>支出登録</h5>
-
-<table>
-    <tr>
-        <td>支出年月日：</td>
-        <td><input type="text" /></td>
-    </tr>
-    <tr>
-        <td>収入内容：</td>
-        <td><input type="text" /></td>
-    </tr>
-    <tr>
-        <td>収入金額：</td>
-        <td><input type="text" /></td>
-    </tr>
-    <tr>
-        <input type="button" value="戻る" routerLink="" routerLinkActive="myactive"/>
-        <td colspan="2"><input type="submit" /></td>
-    </tr>
-</table>
+<form [formGroup]="SpendingForm" (ngSubmit)="inputSpending()">
+    <table>
+        <tr>
+            <td>支出年月日：</td>
+            <td><input type="text" id="spendingRegistDate" formControlName="spendingRegistDate" /></td>
+        </tr>
+        <tr>
+            <td>収入内容：</td>
+            <td><input type="text" id="spendingName" formControlName="spendingName" /></td>
+        </tr>
+        <tr>
+            <td>収入金額：</td>
+            <td><input type="text" id="spendingPrice" formControlName="spendingPrice" /></td>
+        </tr>
+        <tr>
+            <input type="button" value="戻る" routerLink="" routerLinkActive="myactive"/>
+            <td colspan="2"><input type="submit" /></td>
+        </tr>
+    </table>
+</form>

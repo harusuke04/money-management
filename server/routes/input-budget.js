@@ -1,11 +1,20 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const budget = require("../model/budget");
 
-router.get('',function(req,res){
-    console.log('OK')
-    res.json(
+router.post('',function(req,res){
+    this.inputBudgets = [
         {
-            'success':'OK'
+            budgetRegistDate : req.body.budgetRegistDate,
+            budgetName : req.body.budgetName,
+            budgetPrice : req.body.budgetPrice
+        }
+    ]
+
+    this.inputBudgets.forEach(
+        (budgetImport) => {
+            const inputBudget = new budget(budgetImport);
+            inputBudget.save();
         }
     )
 })

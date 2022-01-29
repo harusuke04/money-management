@@ -8,6 +8,8 @@ import { moneyManagementService } from '../shared/money-management-service';
   styleUrls: ['./input-budget.component.css']
 })
 export class InputBudgetComponent {
+  response: any;
+
   BudgetForm = new FormGroup({
     budgetRegistDate: new FormControl(''),
     budgetName: new FormControl(''),
@@ -18,7 +20,12 @@ export class InputBudgetComponent {
 
   inputBudget(){
     // 予算情報の登録
-    this.moneyManagementService.inputBudget(this.BudgetForm.value);
+    const budgetObservable = this.moneyManagementService.inputBudget(this.BudgetForm.value);
+    budgetObservable.subscribe(
+      (data) => {
+        this.response = data;
+      }
+    )
   }
 }
 
