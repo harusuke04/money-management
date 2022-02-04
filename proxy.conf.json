@@ -10,5 +10,9 @@
     "/input-spending":{
         "target": "http://localhost:3001",
         "security":false
+    },
+    "/input-saving":{
+        "target": "http://localhost:3001",
+        "security":false
     }
 }

@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 const config = require('./config/dev')
 const FakeDB = require('./fake-db')
 
+const mainRoutes = require('./routes/main')
 const budgetRoutes = require('./routes/input-budget')
 const spendingRoutes = require('./routes/input-spending')
-const mainRoutes = require('./routes/main')
+const savingRoutes = require('./routes/input-saving')
 
 const { find } = require('./model/budget');
 const { json } = require('stream/consumers');
@@ -33,6 +34,9 @@ app.use('/input-budget', budgetRoutes);
 
 // 支出登録
 app.use('/input-spending', spendingRoutes);
+
+// 支出登録
+app.use('/input-saving', savingRoutes);
 
 // Node-Server起動
 const PORT = process.env.PORT || '3001'

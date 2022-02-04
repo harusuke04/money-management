@@ -11,14 +11,6 @@ export class moneyManagementService{
         }),
         observe: 'response'
     }
-    private handleError(error: HttpErrorResponse) {
-        if(error.error instanceof ErrorEvent){
-
-        }else{
-            console.error('NG')
-        }
-        return throwError
-    }
 
     getMainInfo(): Observable<any>{
         return this.http.get('/main');

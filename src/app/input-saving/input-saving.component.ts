@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { moneyManagementService } from '../shared/money-management-service';
 
 @Component({
@@ -16,7 +17,10 @@ export class InputSavingComponent {
     savingPrice: new FormControl('')
   })
 
-  constructor(private moneyManagementService: moneyManagementService){}
+  constructor(
+    private moneyManagementService: moneyManagementService,
+    private router: Router
+    ){ }
 
   inputSaving(){
     // 貯金情報の登録
@@ -24,6 +28,7 @@ export class InputSavingComponent {
     savingObservable.subscribe(
       (data) => {
         this.response = data;
+        this.router.navigate(['/main'])
       }
     )
   }
