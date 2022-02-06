@@ -1,0 +1,26 @@
+<h5>ログイン</h5>
+<form [formGroup]="LoginForm" (ngSubmit)="login()">
+    <table>
+        <tr>
+            <td>ログインID</td>
+            <td>
+            <input 
+                type="text" 
+                id="loginId" 
+                formControlName="loginId" 
+            /></td>
+        </tr>
+        <tr>
+            <td>パスワード</td>
+            <td>
+            <input 
+                type="text" 
+                id="password" 
+                formControlName="password" 
+            /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" /></td>
+        </tr>
+    </table>
+</form>

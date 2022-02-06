@@ -24,13 +24,10 @@ export class InputSavingComponent {
 
   inputSaving(){
     // 貯金情報の登録
-    const savingObservable = this.moneyManagementService.inputSaving(this.SavingForm.value);
-    savingObservable.subscribe(
-      (data) => {
-        this.response = data;
-        this.router.navigate(['/main'])
-      }
-    )
+    this.moneyManagementService.inputSaving(this.SavingForm.value).subscribe();
+
+    // main画面遷移
+    this.router.navigate(['main'])
   }
 
 }

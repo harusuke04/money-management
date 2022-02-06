@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { moneyManagementService } from '../shared/money-management-service';
 
 @Component({
@@ -16,15 +17,16 @@ export class InputSpendingComponent {
     spendingPrice: new FormControl('')
   })
 
-  constructor(private moneyManagementService: moneyManagementService){}
+  constructor(
+    private moneyManagementService: moneyManagementService,
+    private router: Router
+  ){ }
 
   inputSpending(){
     // 支出情報の登録
-    const spendingObservable = this.moneyManagementService.inputSpending(this.SpendingForm.value);
-    spendingObservable.subscribe(
-      (data) => {
-        this.response = data;
-      }
-    )
+    this.moneyManagementService.inputSpending(this.SpendingForm.value).subscribe();
+
+    // main画面遷移
+    this.router.navigate(['main'])
   }
 }

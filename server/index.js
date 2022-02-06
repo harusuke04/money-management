@@ -35,7 +35,7 @@ app.use('/input-budget', budgetRoutes);
 // 支出登録
 app.use('/input-spending', spendingRoutes);
 
-// 支出登録
+// 貯金登録
 app.use('/input-saving', savingRoutes);
 
 // Node-Server起動

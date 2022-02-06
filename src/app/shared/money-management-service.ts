@@ -27,4 +27,8 @@ export class moneyManagementService{
     inputSaving(SavingForm: any):Observable<any>{
         return this.http.post('/input-saving', SavingForm, this.httpOptions)
     }
+
+    inputIncome(IncomeForm: any):Observable<any>{
+        return this.http.post('/input-income', IncomeForm, this.httpOptions)
+    }
 }

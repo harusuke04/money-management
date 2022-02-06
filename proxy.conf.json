@@ -7,6 +7,10 @@
         "target": "http://localhost:3001",
         "security":false
     },
+    "/input-income":{
+        "target": "http://localhost:3001",
+        "security":false
+    },
     "/input-spending":{
         "target": "http://localhost:3001",
         "security":false
