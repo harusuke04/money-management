@@ -11,6 +11,9 @@ const incomeRoutes = require('./routes/input-income')
 const spendingRoutes = require('./routes/input-spending')
 const savingRoutes = require('./routes/input-saving')
 
+const path =require('path')
+const appPath = path.join(__dirname,'..','dist','money-management');
+
 const { find } = require('./model/budget');
 const { json } = require('stream/consumers');
 
@@ -46,6 +49,11 @@ app.use('/input-spending', spendingRoutes);
 // 貯金登録
 app.use('/input-saving', savingRoutes);
 
+app.use(express.static(appPath));
+app.get("*", function(req,res){
+    res.sendFile(path.resolve(appPath,'index.html'));
+
+})
 // Node-Server起動
 const PORT = process.env.PORT || '3001'
 app.listen(PORT,function(){
