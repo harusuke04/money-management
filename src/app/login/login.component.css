@@ -11,6 +11,11 @@ input[type="text"]{
   padding: 0;
   line-height: 28px;
 }
+input[type="password"]{
+  width: 167px;
+  padding: 0;
+  line-height: 28px;
+}
 .itemName{
   width: 100px;
 }
