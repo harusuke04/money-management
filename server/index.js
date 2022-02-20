@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 const config = require('./config/dev')
 const FakeDB = require('./fake-db')
 
+const loginRoutes = require('./routes/login')
 const mainRoutes = require('./routes/main')
 const budgetRoutes = require('./routes/input-budget')
+const incomeRoutes = require('./routes/input-income')
 const spendingRoutes = require('./routes/input-spending')
 const savingRoutes = require('./routes/input-saving')
 
@@ -26,11 +28,17 @@ mongoose.connect(config.DB_URI);
 const app = express()
 app.use(bodyParser.json());
 
+// ログイン認証
+app.use('/login',loginRoutes);
+
 // DBから必要情報を取得
 app.use('/main', mainRoutes);
 
 // 予算登録
 app.use('/input-budget', budgetRoutes);
+
+// 収入登録
+app.use('/input-income', incomeRoutes);
 
 // 支出登録
 app.use('/input-spending', spendingRoutes);

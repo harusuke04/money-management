@@ -8,6 +8,7 @@
                     type="text" 
                     id="incomeRegistDate"
                     formControlName="incomeRegistDate"
+                    required
                 />
             </td>
         </tr>
@@ -18,21 +19,22 @@
                     type="text" 
                     id="incomePrice"
                     formControlName="incomePrice"
+                    required
                 />
             </td>
         </tr>
         <tr>
             <td>収入登録者：</td>
             <td>
-                <select id="incomeRegistFlg" formControlName="incomeRegistFlg">
-                    <option value="1">あみ
-                    <option value="2">しゅんすけ
+                <select id="incomeRegistFlg" formControlName="incomeRegistFlg" required>
+                    <option value="1">あみ</option>
+                    <option value="2">しゅんすけ</option>
                 </select>
             </td>
         </tr>
         <tr>
             <input type="button" value="戻る" routerLink="/main" routerLinkActive="myactive"/>
-            <td colspan="2"><input type="submit" /></td>
+            <td colspan="2"><input type="submit" [disabled]="!IncomeForm.valid" /></td>
         </tr>
     </table>
 </form>

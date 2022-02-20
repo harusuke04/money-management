@@ -1,4 +1,7 @@
 <h5>ログイン</h5>
+<div *ngIf="errors && errors.length>0">
+    <p *ngFor="let error of errors">{{ error.detail }}</p>
+</div>
 <form [formGroup]="LoginForm" (ngSubmit)="login()">
     <table>
         <tr>
@@ -7,20 +10,22 @@
             <input 
                 type="text" 
                 id="loginId" 
-                formControlName="loginId" 
+                formControlName="loginId"
+                required
             /></td>
         </tr>
         <tr>
             <td>パスワード</td>
             <td>
             <input 
-                type="text" 
+                type="password" 
                 id="password" 
                 formControlName="password" 
+                required
             /></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" /></td>
+            <td colspan="2"><input type="submit" [disabled]="!LoginForm.valid"/></td>
         </tr>
     </table>
 </form>

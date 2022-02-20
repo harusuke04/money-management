@@ -1,18 +1,46 @@
 <div class="container">
     <div class="row">
+        <div class="col">
+            <table>
+                <thead>
+                    <tr>
+                        <th><h6>総貯金額</h6></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10,000,000円（前月比＋1,000,000）</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+          2 of 2
+        </div>
+    </div>
+    <br>
+    <div class="row">
         <div class="col">            
             <table>
-                <tr><h6>今後の予算</h6></tr>
-                <tr>
-                    <th>日付</th>
-                    <th>予算項目</th>
-                    <th>予算</th>
-                </tr>
-                <tr *ngFor="let budget of budgetList">
-                    <td>{{ budget.budgetRegistDate }}</td>
-                    <td>{{ budget.budgetName }}</td>
-                    <td>{{ budget.budgetPrice }}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>
+                            <h6>今後の予算</h6>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>日付</th>
+                        <th>予算項目</th>
+                        <th>予算</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let budget of budgetList">
+                        <td>{{ budget.budgetRegistDate }}</td>
+                        <td>{{ budget.budgetName }}</td>
+                        <td>{{ budget.budgetPrice }}</td>
+                    </tr>
+                </tbody>
                 <tr><button routerLink="input-budget" routerLinkActive="myactive">予算追加</button></tr>
             </table>
         </div>

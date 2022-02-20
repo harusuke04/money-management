@@ -4,19 +4,40 @@
     <table>
         <tr>
             <td>予定年月：</td>
-            <td><input type="text" id="budgetRegistDate" formControlName="budgetRegistDate" /></td>
+            <td>
+                <input 
+                    type="text" 
+                    id="budgetRegistDate" 
+                    formControlName="budgetRegistDate" 
+                    required
+                />
+            </td>
         </tr>
         <tr>
             <td>項目：</td>
-            <td><input type="text" id="budgetName" formControlName="budgetName" /></td>
+            <td>
+                <input 
+                    type="text" 
+                    id="budgetName" 
+                    formControlName="budgetName" 
+                    required
+                />
+            </td>
         </tr>
         <tr>
             <td>金額：</td>
-            <td><input type="text" id="budgetPrice" formControlName="budgetPrice" /></td>
+            <td>
+                <input 
+                    type="text" 
+                    id="budgetPrice" 
+                    formControlName="budgetPrice" 
+                    required
+                />
+            </td>
         </tr>
         <tr>
             <button routerLink="/main" routerLinkActive="myactive">戻る</button>
-            <td colspan="2"><input type="submit" /></td>
+            <td colspan="2"><input type="submit" [disabled]="!BudgetForm.valid"/></td>
         </tr>
     </table>
 </form>

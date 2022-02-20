@@ -3,6 +3,8 @@ const router = express.Router();
 const income = require("../model/income");
 
 router.post('',function(req,res){
+    console.log(req.body.incomeRegistDate);
+
     this.inputIncomes = [
         {
             incomeRegistDate : req.body.incomeRegistDate,
@@ -13,6 +15,7 @@ router.post('',function(req,res){
 
     this.inputIncomes.forEach(
         (incomeImport) => {
+            console.log(incomeImport)
             const inputIncome = new income(incomeImport);
             inputIncome.save();
         }

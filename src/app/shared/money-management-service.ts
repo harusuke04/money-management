@@ -12,6 +12,10 @@ export class moneyManagementService{
         observe: 'response'
     }
 
+    login(LoginForm: any): Observable<any>{
+        return this.http.post('/login',LoginForm,this.httpOptions)
+    }
+
     getMainInfo(): Observable<any>{
         return this.http.get('/main');
     }
